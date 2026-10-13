@@ -1,0 +1,13 @@
+{
+  "collection": {
+    "ok": false,
+    "method": "google-play-scraper (unofficial)",
+    "app_id": "com.moveinsync.ets",
+    "country": "in",
+    "lang": "en",
+    "sort": "NEWEST",
+    "requested_max": 3000,
+    "attempted_at": "2026-10-13T01:08:47Z",
+    "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
+  }
+}
