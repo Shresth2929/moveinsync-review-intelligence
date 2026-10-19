@@ -1,13 +1,38 @@
 {
   "collection": {
-    "ok": false,
+    "ok": true,
     "method": "google-play-scraper (unofficial)",
     "app_id": "com.moveinsync.ets",
     "country": "in",
     "lang": "en",
     "sort": "NEWEST",
     "requested_max": 3000,
-    "attempted_at": "2026-10-13T01:08:47Z",
-    "error": "URLError: <urlopen error [Errno -2] Name or service not known>"
+    "attempted_at": "2026-10-19T08:23:37Z",
+    "error": null,
+    "fetched_rows": 3000
+  },
+  "displayed_rating": 4.6401114,
+  "displayed_ratings_count": 115145,
+  "displayed_reviews_count": 23665,
+  "installs": "1,000,000+",
+  "current_version": "12.19.0",
+  "title": "MoveInSync",
+  "histogram": [
+    7342,
+    847,
+    1209,
+    7103,
+    98638
+  ],
+  "meta_collected_at": "2026-10-19T08:23:37Z",
+  "clean_stats_last_run": {
+    "input_rows": 3000,
+    "dropped_invalid_rating": 0,
+    "dropped_empty_row": 0,
+    "dropped_duplicates": 0,
+    "missing_text": 0,
+    "missing_date": 0,
+    "missing_version": 291,
+    "output_rows": 3000
   }
 }
