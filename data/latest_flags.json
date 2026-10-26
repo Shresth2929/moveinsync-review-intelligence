@@ -1,17 +1,14 @@
 {
-  "generated": "2026-10-19T08:23:40Z",
+  "generated": "2026-10-26T08:23:45Z",
   "available": true,
   "days": 30,
-  "anchor_date": "2026-10-17",
-  "current_n": 234,
-  "previous_n": 234,
-  "flags": [
-    "'Other or insufficient evidence' share of negative reviews rose +13.7 pp (37.7% -> 51.4%)",
-    "'Crashes, freezing and app stability' share of negative reviews rose +10.5 pp (6.6% -> 17.1%)"
-  ],
-  "current_neg_pct": 29.9,
-  "previous_neg_pct": 26.1,
-  "neg_pct_change_pp": 3.8,
-  "current_mean": 3.75,
-  "previous_mean": 3.9
+  "anchor_date": "2026-10-24",
+  "current_n": 208,
+  "previous_n": 250,
+  "flags": [],
+  "current_neg_pct": 28.8,
+  "previous_neg_pct": 27.2,
+  "neg_pct_change_pp": 1.6,
+  "current_mean": 3.8,
+  "previous_mean": 3.87
 }
