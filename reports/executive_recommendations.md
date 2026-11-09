@@ -1,14 +1,14 @@
 # MoveInSync Review Intelligence — Executive Recommendations
 
-*Dataset: 3091 written reviews, 2025-09-29 to 2026-11-01. Source: google_play_scraper:in:en:newest. Collected: 2026-11-02T10:26:35Z.*
+*Dataset: 3142 written reviews, 2025-09-29 to 2026-11-07. Source: google_play_scraper:in:en:newest. Collected: 2026-11-09T10:47:12Z.*
 
 ## 1. Executive summary
 
-- **Displayed Google Play rating:** 4.640111 (store-wide, all star ratings). **Sample mean of written reviews:** 3.84 (n=3091). These are different metrics.
-- **Negative reviews (1–2★):** 833 of 3091 sampled reviews (26.9%).
-- **Booking and cancellation** appears in 88 of 833 negative reviews (10.6%); owner type: mixed.
-- **Login, authentication and account access** appears in 65 of 833 negative reviews (7.8%); owner type: app.
-- **Driver, cab and transport operations** appears in 164 of 833 negative reviews (19.7%); owner type: ops.
+- **Displayed Google Play rating:** 4.6434183 (store-wide, all star ratings). **Sample mean of written reviews:** 3.84 (n=3142). These are different metrics.
+- **Negative reviews (1–2★):** 847 of 3142 sampled reviews (27.0%).
+- **Booking and cancellation** appears in 88 of 847 negative reviews (10.4%); owner type: mixed.
+- **Login, authentication and account access** appears in 65 of 847 negative reviews (7.7%); owner type: app.
+- **Driver, cab and transport operations** appears in 168 of 847 negative reviews (19.8%); owner type: ops.
 
 Percentages are keyword-rule matches, multi-label (can sum above 100%). Causes below are hypotheses until confirmed with internal telemetry.
 
@@ -19,36 +19,36 @@ Why are Play Store ratings for the MoveInSync employee transport app poor, and w
 ## 3. Data sources, collection and sample
 
 - Collection method/status: `google-play-scraper (unofficial)`; country `in`, language `en`, sort `NEWEST`.
-- Cleaning: {"input_rows": 3000, "dropped_invalid_rating": 0, "dropped_empty_row": 0, "dropped_duplicates": 0, "missing_text": 0, "missing_date": 0, "missing_version": 296, "output_rows": 3000}
+- Cleaning: {"input_rows": 3000, "dropped_invalid_rating": 0, "dropped_empty_row": 0, "dropped_duplicates": 0, "missing_text": 0, "missing_date": 0, "missing_version": 297, "output_rows": 3000}
 - Selection bias: only users who chose to write a review are included; written reviews skew towards strong opinions and are not representative of all employees or rides.
 
 ## 4. Rating and negative-review evidence
 
-| Rating | Count | % of sample (n=3091) |
+| Rating | Count | % of sample (n=3142) |
 |---|---|---|
-| 1★ | 741 | 24.0% |
-| 2★ | 92 | 3.0% |
-| 3★ | 79 | 2.6% |
-| 4★ | 192 | 6.2% |
-| 5★ | 1987 | 64.3% |
+| 1★ | 753 | 24.0% |
+| 2★ | 94 | 3.0% |
+| 3★ | 80 | 2.5% |
+| 4★ | 196 | 6.2% |
+| 5★ | 2019 | 64.3% |
 
-Period comparison (last 30 days vs previous 30, anchored 2026-11-01): negative share 27.8% → 27.6% (n=237 → 217).
+Period comparison (last 30 days vs previous 30, anchored 2026-11-07): negative share 28.1% → 27.2% (n=253 → 213).
 
-## 5. Top complaint themes (denominator = 833 negative reviews)
+## 5. Top complaint themes (denominator = 847 negative reviews)
 
 | Theme | Owner type | Count | % of negative |
 |---|---|---|---|
-| Other or insufficient evidence | n/a | 373 | 44.8% |
-| Driver, cab and transport operations | ops | 164 | 19.7% |
-| Pickup/drop timing and ETA accuracy | mixed | 91 | 10.9% |
-| Booking and cancellation | mixed | 88 | 10.6% |
-| Live tracking and GPS accuracy | mixed | 76 | 9.1% |
-| Login, authentication and account access | app | 65 | 7.8% |
-| Customer support and issue resolution | ops | 56 | 6.7% |
-| UI/UX and navigation | app | 55 | 6.6% |
-| Crashes, freezing and app stability | app | 54 | 6.5% |
-| Performance, speed and loading | app | 40 | 4.8% |
-| Safety, OTP and driver verification | ops | 32 | 3.8% |
+| Other or insufficient evidence | n/a | 379 | 44.7% |
+| Driver, cab and transport operations | ops | 168 | 19.8% |
+| Pickup/drop timing and ETA accuracy | mixed | 93 | 11.0% |
+| Booking and cancellation | mixed | 88 | 10.4% |
+| Live tracking and GPS accuracy | mixed | 81 | 9.6% |
+| Login, authentication and account access | app | 65 | 7.7% |
+| Customer support and issue resolution | ops | 58 | 6.8% |
+| UI/UX and navigation | app | 57 | 6.7% |
+| Crashes, freezing and app stability | app | 55 | 6.5% |
+| Performance, speed and loading | app | 40 | 4.7% |
+| Safety, OTP and driver verification | ops | 33 | 3.9% |
 | Notifications and check-in | app | 31 | 3.7% |
 | Route planning and pickup order | ops | 27 | 3.2% |
 | Permissions and privacy | app | 7 | 0.8% |
@@ -90,19 +90,19 @@ Priority score = frequency % × severity (analyst estimate 1–5) × keyword con
 
 | # | Theme | Share of negative | Score | Owner | Effort (est.) | Proposed fix | Success metric |
 |---|---|---|---|---|---|---|---|
-| 1 | Booking and cancellation | 10.6% (88/833) | 14.0 | Product + Backend | M | Review booking/cancellation funnel drop-offs; surface cut-off rules and failure reasons inside the app; reduce steps to book/cancel. | Booking completion rate; cancellation-failure rate (needs internal access) |
-| 2 | Login, authentication and account access | 7.8% (65/833) | 13.8 | Backend + Mobile engineering | M | Audit login/OTP/session failure logs; add clear error states and retry; verify SMS/OTP delivery provider success rates. | Login success rate (needs internal access) |
-| 3 | Driver, cab and transport operations | 19.7% (164/833) | 12.8 | Operations | L | Route to fleet/vendor management; this is mainly NOT an app defect. | Operations NPS / vendor SLA (needs internal access) |
-| 4 | Crashes, freezing and app stability | 6.5% (54/833) | 11.0 | Mobile engineering | M | Pull crash clusters from Play Console Android Vitals / Crashlytics for the app versions named in reviews; reproduce top stack traces; ship a hotfix for top-3 clusters. | Crash-free sessions; ANR rate (needs internal access) |
-| 5 | Pickup/drop timing and ETA accuracy | 10.9% (91/833) | 9.2 | Backend + Operations | L | Measure ETA vs actual arrival error; separate algorithm error from late operations; show confidence/ETA ranges. | ETA absolute error p50/p90 (needs internal access) |
-| 6 | Live tracking and GPS accuracy | 9.1% (76/833) | 7.8 | Mobile + Backend | L | Compare reported vehicle position with driver-app GPS pings; inspect update interval/staleness; add 'last updated' timestamp. | Position staleness p95; tracking-related complaint share |
-| 7 | Customer support and issue resolution | 6.7% (56/833) | 6.7 | Support | M | Measure first-response and resolution time; add in-app issue reporting with ticket status; reply to negative reviews. | First-response time; developer-reply coverage |
-| 8 | Safety, OTP and driver verification | 3.8% (32/833) | 6.4 | Operations + Product | M | Triage safety-tagged reviews manually within 48h; confirm driver verification and OTP flows work end-to-end. | Safety incident reports per 10k trips (needs internal access) |
-| 9 | Performance, speed and loading | 4.8% (40/833) | 4.9 | Mobile engineering | M | Profile cold start and key screens; cache roster/trip data; measure on low-end devices. | Cold-start time p90; screen load p90 |
-| 10 | Notifications and check-in | 3.7% (31/833) | 4.7 | Mobile + Backend | M | Audit push delivery (FCM) and notification settings flows; handle OEM battery-optimisation kills; add fallback SMS for critical alerts. | Push delivery/open rate (needs internal access) |
-| 11 | UI/UX and navigation | 6.6% (55/833) | 4.6 | Product design | M | Run usability review on top-complaint flows after defects are fixed. | Task completion rate in usability tests |
-| 12 | Route planning and pickup order | 3.2% (27/833) | 2.2 | Operations | L | Review routing rules and pickup sequence complaints with routing team; communicate sequence changes in advance. | Route-related complaint share |
-| 13 | Permissions and privacy | 0.8% (7/833) | 1.6 | Product + Legal | S | Review permission prompts and privacy copy; request only needed permissions. | Permission-denial rate |
+| 1 | Booking and cancellation | 10.4% (88/847) | 13.7 | Product + Backend | M | Review booking/cancellation funnel drop-offs; surface cut-off rules and failure reasons inside the app; reduce steps to book/cancel. | Booking completion rate; cancellation-failure rate (needs internal access) |
+| 2 | Login, authentication and account access | 7.7% (65/847) | 13.7 | Backend + Mobile engineering | M | Audit login/OTP/session failure logs; add clear error states and retry; verify SMS/OTP delivery provider success rates. | Login success rate (needs internal access) |
+| 3 | Driver, cab and transport operations | 19.8% (168/847) | 12.9 | Operations | L | Route to fleet/vendor management; this is mainly NOT an app defect. | Operations NPS / vendor SLA (needs internal access) |
+| 4 | Crashes, freezing and app stability | 6.5% (55/847) | 11.0 | Mobile engineering | M | Pull crash clusters from Play Console Android Vitals / Crashlytics for the app versions named in reviews; reproduce top stack traces; ship a hotfix for top-3 clusters. | Crash-free sessions; ANR rate (needs internal access) |
+| 5 | Pickup/drop timing and ETA accuracy | 11.0% (93/847) | 9.2 | Backend + Operations | L | Measure ETA vs actual arrival error; separate algorithm error from late operations; show confidence/ETA ranges. | ETA absolute error p50/p90 (needs internal access) |
+| 6 | Live tracking and GPS accuracy | 9.6% (81/847) | 8.2 | Mobile + Backend | L | Compare reported vehicle position with driver-app GPS pings; inspect update interval/staleness; add 'last updated' timestamp. | Position staleness p95; tracking-related complaint share |
+| 7 | Customer support and issue resolution | 6.8% (58/847) | 6.8 | Support | M | Measure first-response and resolution time; add in-app issue reporting with ticket status; reply to negative reviews. | First-response time; developer-reply coverage |
+| 8 | Safety, OTP and driver verification | 3.9% (33/847) | 6.5 | Operations + Product | M | Triage safety-tagged reviews manually within 48h; confirm driver verification and OTP flows work end-to-end. | Safety incident reports per 10k trips (needs internal access) |
+| 9 | Performance, speed and loading | 4.7% (40/847) | 4.8 | Mobile engineering | M | Profile cold start and key screens; cache roster/trip data; measure on low-end devices. | Cold-start time p90; screen load p90 |
+| 10 | Notifications and check-in | 3.7% (31/847) | 4.7 | Mobile + Backend | M | Audit push delivery (FCM) and notification settings flows; handle OEM battery-optimisation kills; add fallback SMS for critical alerts. | Push delivery/open rate (needs internal access) |
+| 11 | UI/UX and navigation | 6.7% (57/847) | 4.6 | Product design | M | Run usability review on top-complaint flows after defects are fixed. | Task completion rate in usability tests |
+| 12 | Route planning and pickup order | 3.2% (27/847) | 2.2 | Operations | L | Review routing rules and pickup sequence complaints with routing team; communicate sequence changes in advance. | Route-related complaint share |
+| 13 | Permissions and privacy | 0.8% (7/847) | 1.6 | Product + Legal | S | Review permission prompts and privacy copy; request only needed permissions. | Permission-denial rate |
 
 Baselines for each metric must come from internal data; targets are to be set by the team and are not predictions.
 
@@ -119,15 +119,15 @@ Crash-free sessions, login success, booking completion, ETA error, notification 
 
 ## 11. Risks, assumptions and limitations
 
-- Keyword classification is imprecise; see `reports/methodology.md` for the validation procedure. Classification coverage: 77.2% of reviews matched a category; 44.8% of negative reviews unclassified.
-- Reply coverage: {'observable': True, 'overall_pct': 2.8, 'overall_denominator': 3091, 'negative_pct': 4.0, 'negative_denominator': 833}
+- Keyword classification is imprecise; see `reports/methodology.md` for the validation procedure. Classification coverage: 77.2% of reviews matched a category; 44.7% of negative reviews unclassified.
+- Reply coverage: {'observable': True, 'overall_pct': 2.8, 'overall_denominator': 3142, 'negative_pct': 3.9, 'negative_denominator': 847}
 - No causal claims about releases are made.
 
 ## 12. Recurring monitoring
 
 `python -m src.pipeline --collect` (or `--import-csv`) weekly; flags are written to `data/latest_flags.json`.
 
-**Current flags:** 'Booking and cancellation' share of negative reviews rose +10.6 pp (6.1% -> 16.7%); 'Customer support and issue resolution' share of negative reviews rose +8.5 pp (1.5% -> 10.0%)
+**Current flags:** 'Live tracking and GPS accuracy' share of negative reviews rose +9.9 pp (5.6% -> 15.5%); 'Customer support and issue resolution' share of negative reviews rose +9.3 pp (2.8% -> 12.1%)
 
 ## 13. Tools and methodology
 
