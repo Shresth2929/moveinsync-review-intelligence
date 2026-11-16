@@ -7,24 +7,24 @@
     "lang": "en",
     "sort": "NEWEST",
     "requested_max": 3000,
-    "attempted_at": "2026-11-09T10:47:12Z",
+    "attempted_at": "2026-11-16T10:31:20Z",
     "error": null,
     "fetched_rows": 3000
   },
-  "displayed_rating": 4.6434183,
-  "displayed_ratings_count": 116004,
-  "displayed_reviews_count": 23799,
+  "displayed_rating": 4.6447415,
+  "displayed_ratings_count": 116205,
+  "displayed_reviews_count": 23823,
   "installs": "1,000,000+",
   "current_version": "12.21.0",
   "title": "MoveInSync",
   "histogram": [
-    7396,
-    859,
-    1159,
-    6878,
-    99708
+    7373,
+    838,
+    1180,
+    6907,
+    99902
   ],
-  "meta_collected_at": "2026-11-09T10:47:12Z",
+  "meta_collected_at": "2026-11-16T10:31:20Z",
   "clean_stats_last_run": {
     "input_rows": 3000,
     "dropped_invalid_rating": 0,
@@ -32,7 +32,7 @@
     "dropped_duplicates": 0,
     "missing_text": 0,
     "missing_date": 0,
-    "missing_version": 297,
+    "missing_version": 299,
     "output_rows": 3000
   }
 }

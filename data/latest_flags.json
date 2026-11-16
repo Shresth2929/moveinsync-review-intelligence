@@ -1,17 +1,18 @@
 {
-  "generated": "2026-11-09T10:47:16Z",
+  "generated": "2026-11-16T10:31:22Z",
   "available": true,
   "days": 30,
-  "anchor_date": "2026-11-07",
-  "current_n": 213,
-  "previous_n": 253,
+  "anchor_date": "2026-11-14",
+  "current_n": 192,
+  "previous_n": 249,
   "flags": [
-    "'Live tracking and GPS accuracy' share of negative reviews rose +9.9 pp (5.6% -> 15.5%)",
-    "'Customer support and issue resolution' share of negative reviews rose +9.3 pp (2.8% -> 12.1%)"
+    "'Driver, cab and transport operations' share of negative reviews rose +8.5 pp (15.1% -> 23.6%)",
+    "'Live tracking and GPS accuracy' share of negative reviews rose +9.0 pp (5.5% -> 14.5%)",
+    "'Customer support and issue resolution' share of negative reviews rose +10.4 pp (4.1% -> 14.5%)"
   ],
-  "current_neg_pct": 27.2,
-  "previous_neg_pct": 28.1,
-  "neg_pct_change_pp": -0.8,
-  "current_mean": 3.87,
-  "previous_mean": 3.83
+  "current_neg_pct": 28.6,
+  "previous_neg_pct": 29.3,
+  "neg_pct_change_pp": -0.7,
+  "current_mean": 3.8,
+  "previous_mean": 3.79
 }
